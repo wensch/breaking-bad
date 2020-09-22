@@ -1,0 +1,62 @@
+.list-characters
+  box-sizing border-box
+  display flex
+  flex-wrap wrap
+  margin-top 80px
+  width 100%
+  z-index 1
+  justify-content space-between
+
+  .character
+    color #ffffff
+    display block
+    margin-bottom 20px
+    max-width 350px
+    width 100%
+    
+    &-name
+      font-size 20px
+      min-height 50px
+      font-weight 600
+      display block
+      text-transform capitalize
+    
+    &-image-holder
+      overflow hidden
+      height 450px
+      position relative
+      background-size cover
+      background-position center
+
+    // &-image
+    //   // height 100%
+    //   position absolute
+    //   left 50%
+    //   transform translateX(-50%)
+    
+    &-status
+      background-color red
+      padding 10px
+      position absolute
+      bottom 10px
+      box-sizing border-box
+      z-index 1
+      right 0
+
+      &.-alive
+        background-color green
+      
+      &.-know
+        background-color yellow
+    
+    &-content
+      margin-top 20px
+      
+      ul
+        padding-left 20px
+        margin-top 5px
+    
+    &-info
+      display block
+      margin-bottom 5px
+      font-size 16px
