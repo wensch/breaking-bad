@@ -36,8 +36,9 @@
         </button>
       </div>
       <div class="pagination-item" v-for="(page, index) in pages" :key="index">
-        <button class="pagination-button" 
-          @click="onClickPage(page)"
+        <button class="pagination-button"
+          type="button" 
+          @click="onClickPage(page.number)"
           :class="{active: isPageActive(page.number)}">
           {{page.number}}
         </button>
@@ -156,7 +157,7 @@ export default {
         behavior: 'smooth'
       });
 
-      console.log(this.pages);
+      console.log(this.currentPage);
     }
   }
 }
