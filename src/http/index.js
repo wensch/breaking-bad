@@ -2,16 +2,11 @@
 import axios from 'axios'
 // import VueAxios from 'vue-axios'
 
-// Vue.use(VueAxios, axios)
+const url = 'https://www.breakingbadapi.com/api/'
+const limit = 63
+let offset = 0
 
-// const http  = axios.create({
-//   baseURL: 'https://www.breakingbadapi.com/api/'
-// })
-
-// http.options.root = 'https://www.breakingbadapi.com/api/'
-
-// console.log(axios);
-
-export const http = axios.create({
-  baseURL: 'https://www.breakingbadapi.com/api/'
-})
+const $characters = axios.get(`${url}characters?limit=${limit}&offset=${offset}`)
+  .then((response) => response.data)
+  
+export default $characters
