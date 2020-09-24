@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="msg-result-fail" v-if="paginatedData.length <= 0">
-      <strong class="msg-result-fail-title">Not finded this is character {{search}} </strong>
+      <strong class="msg-result-fail-title">Did not find this character "{{contentSearch}}" </strong>
       <span class="msg-result-fail-des">Repeat this search...</span>
     </div>
     <div class="pagination" v-if="data.length > 6 || currentPage > 1">
@@ -62,8 +62,6 @@
 </template>
 
 <script>
-// import {mapActions, mapGetters} from 'vuex'
-
 export default {
   name: 'ListCharacter',
   props: {
@@ -92,10 +90,15 @@ export default {
     currentPage: {
       type: Number,
       required: true
+    },
+    contentSearch: {
+      type: String,
+      required: false
     }
   },
   computed: {
     paginatedData() {
+      if (this.contentSearch != '') return this.data
       let start = (this.currentPage - 1) * this.perPage, end = start + this.perPage
       return this.data.slice(start, end)
     },

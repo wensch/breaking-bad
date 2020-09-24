@@ -12,8 +12,9 @@
       <ListCharacter
         :data="resultSearched"
         :total-pages="Math.ceil(chara.length / 6)"
-        :total="chara.length"
+        :total="resultSearched.length"
         :currentPage="currentPage"
+        :contentSearch="search"
         @pageChanged="onPageChange"
       />
     </div>
@@ -42,6 +43,7 @@ export default {
     ...mapActions(['loadCharact']),
     onPageChange(page) {
       this.currentPage = page
+      console.log(page);
     }
   },
   computed: {
@@ -55,7 +57,7 @@ export default {
           let name = people.name.toLowerCase()
           return name.indexOf(this.search.toLowerCase()) !== -1
         } )
-        
+        console.log('filtered', filtered);
         return filtered
       }
     }
