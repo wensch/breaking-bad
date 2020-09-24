@@ -1,3 +1,6 @@
+// Colors
+$breakpoint-mobile = 767px
+
 body
   padding 0
   margin 0
@@ -6,6 +9,24 @@ body
 ul
   margin 0
   padding 0
+
+.home
+  position relative
+
+  &:after
+    content ''
+    position fixed
+    width 100%
+    height 100%
+    left 0
+    top 0
+    // background-image url('../../assets/images/tenor-2.gif')
+    background-image url('../../assets/images/bg-5.jpg')
+    background-repeat no-repeat
+    background-size cover
+    background-position center
+    z-index -1
+    opacity .15
 
 .container
   max-width 1200px

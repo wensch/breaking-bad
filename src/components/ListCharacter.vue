@@ -24,6 +24,10 @@
         </div>
       </div>
     </div>
+    <div class="msg-result-fail" v-if="paginatedData.length <= 0">
+      <strong class="msg-result-fail-title">Not finded this is character {{search}} </strong>
+      <span class="msg-result-fail-des">Repeat this search...</span>
+    </div>
     <div class="pagination" v-if="data.length > 6 || currentPage > 1">
       <div class="pagination-item">
         <button class="pagination-button" @click="onClickFirstPage" :disabled="isInFirstPage">

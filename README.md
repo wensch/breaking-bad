@@ -1,4 +1,10 @@
 # breaking-bad
+```
+git clone https://github.com/wensch/breaking-bad.git
+```
+```
+cd breaking-bad
+```
 
 ## Project setup
 ```

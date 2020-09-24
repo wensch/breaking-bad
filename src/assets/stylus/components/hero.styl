@@ -1,13 +1,17 @@
 .hero
   position relative
-  // min-height 700px
   overflow hidden
   height 100%
   width 100%
+  @media (max-width $breakpoint-mobile)
+    min-height 500px
+    margin-bottom 20px
 
 .bg
-  // left 50%
-  // position absolute
-  // transform translateX(-50%)
   max-width 100%
-  // z-index -1
+  @media (max-width $breakpoint-mobile)
+    left 50%
+    position absolute
+    transform translateX(-50%)
+    height 100%
+    max-width fit-content

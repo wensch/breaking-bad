@@ -2,14 +2,11 @@
   <div id="app">
     <div class="home">
       <div class="hero">
-        <img src="@/assets/images/bg-5.jpg" class="bg" alt="">
+        <img src="@/assets/images/bg-4.jpg" class="bg" alt="">
       </div>
       <div class="container">
         <div class="search">
-          <input type="text" placeholder="Search" class="search-field" v-model="search">
-          <button class="search-btn">
-            <font-awesome-icon icon="search" />
-          </button>
+          <input type="text" placeholder="Search characters " class="search-field" v-model="search">
         </div>
       </div>
       <ListCharacter
@@ -54,11 +51,12 @@ export default {
       if (this.search == '' || this.search == ' '){
         return this.chara
       } else {
-        let l = this.chara.filter(people => {
+        let filtered = this.chara.filter(people => {
           let name = people.name.toLowerCase()
           return name.indexOf(this.search.toLowerCase()) !== -1
         } )
-        return l
+        
+        return filtered
       }
     }
   },
