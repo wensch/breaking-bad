@@ -156,8 +156,6 @@ export default {
         left: children.offsetLeft,
         behavior: 'smooth'
       });
-
-      console.log(this.currentPage);
     }
   }
 }
